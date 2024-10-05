@@ -28,3 +28,9 @@ Bind mount project with docker conatiner
 docker run -it --init -p 3001:3000 -v "$(pwd)":/developer/nodejs/node-bind-mount-project <image_name>
 ```
 
+Add Docker vloume so that data persists even if containeris turn down
+```
+docker volume api-gateway-node-modules
+docker run -it --init -publish 3001:3001 -v "($pwd)":/developer/nodejs/api-gateway  -v api-gateway-node-modules:/developer/nodejs/api-gateway/node_modules <image_tag>
+```
+
